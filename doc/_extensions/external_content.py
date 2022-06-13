@@ -81,12 +81,19 @@ def adjust_includes(
 
         return f".. {directive}:: {fpath_adj}"
 
+    def _remove_format(m):
+        (text,) = m.groups()
+        return text
+
     with open(fname, "r+", encoding=encoding) as f:
         content = f.read()
         content_adj, modified = re.subn(
             r"\.\. (" + "|".join(directives) + r")::\s*([^`\n]+)", _adjust, content
         )
-        if modified:
+        content_adj, other_modified = re.subn(
+            r"abc(.*?)abc", _remove_format, content_adj
+        )
+        if modified or other_modified:
             f.seek(0)
             f.write(content_adj)
             f.truncate()

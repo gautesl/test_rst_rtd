@@ -12,6 +12,8 @@ Welcome to Test RST on RTD's documentation!
 
    my_page
    src/source
+   guides/index
+
 
 Indices and tables
 ==================
