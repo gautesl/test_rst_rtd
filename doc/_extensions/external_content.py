@@ -162,6 +162,8 @@ def sync_contents(app: Sphinx) -> None:
                 if not filecmp.cmp(src_adjusted, dst):
                     dst.unlink()
                     shutil.move(os.fspath(src_adjusted), os.fspath(dst))
+        else:
+            print(f"not copying {src} to {dst}")
 
     # remove any previously copied file not present in the origin folder,
     # excepting those marked to be kept.
