@@ -3,4 +3,6 @@ Source Code
 
 Here lies the source code of the project.
 
-.. include:: included.rst
+.. image:: ../doc/_static/images/logo.png
+
+.. include:: ../doc/included.rst
