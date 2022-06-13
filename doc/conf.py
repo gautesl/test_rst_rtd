@@ -65,5 +65,6 @@ html_theme_options = {
 
 external_content_contents = [
     (TEST_BASE / "doc", "[!_]*"),
+    (TEST_BASE / "doc", "_static/images"),
     (TEST_BASE, "src/**/*.rst"),
 ]
