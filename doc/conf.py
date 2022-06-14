@@ -68,3 +68,6 @@ external_content_contents = [
     (TEST_BASE / "doc", "_static/images"),
     (TEST_BASE, "src/**/*.rst"),
 ]
+
+def setup(app):
+    app.srcdir = str((Path("_build") / "src").resolve())
